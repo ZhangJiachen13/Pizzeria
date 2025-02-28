@@ -3,6 +3,8 @@ public class Pizzeria {
     public final String DEF_PIZZA_INGREDIENTS = "Mozzarella Cheese";
     public final double DEF_ORDER_TOTAL = 15.00;
     
+   public String expiryDate;
+   public int cvv;
     public String storeAddress;
     public String storeEmail;
     public long storePhone;
@@ -116,7 +118,7 @@ public class Pizzeria {
           private int firstCardDigit;
           private int lastFourDigits;
           private String cardNumberToDisplay;
-    public void processCardPayment(String cardNumber, String expiryDate, int cvv){
+    public void processCardPayment(String cardNumber){
      
       if(cardNumber.equals(cardLength)){
         System.out.println("Card accepted");
