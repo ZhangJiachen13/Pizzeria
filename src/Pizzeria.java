@@ -111,6 +111,41 @@ public class Pizzeria {
       System.out.println("Order Total:" + orderTotal);
     }
 
+          private String cardLength = new String("14");
+          private String blacklistedNumber = new String();
+          private int firstCardDigit;
+          private int lastFourDigits;
+          private String cardNumberToDisplay;
+    public void processCardPayment(String cardNumber, String expiryDate, int cvv){
+     
+      if(cardNumber.equals(cardLength)){
+        System.out.println("Card accepted");
+      }else{
+        System.out.println("Invalid card");
+      }
+      
+      char firstCard = cardNumber.charAt(0);
+      firstCardDigit = Integer.parseInt(String.valueOf(firstCard));
+      
+      if(cardNumber.equals(blacklistedNumber)){
+        System.out.println("Card is blacklisted,Please use another card");
+      }else{
+        System.out.println("");
+      }
+
+      String lastFourCard = cardNumber.substring(cardNumber.length() - 4);
+      lastFourDigits = Integer.parseInt(String.valueOf(lastFourCard));
+      cardNumberToDisplay =firstCardDigit+"*********" +lastFourDigits;
+      System.out.println(cardNumberToDisplay);
+
+    }
+    public void special0fTheDay(String pizzaOfTheDay, String sideOfTheDay, double specialPrice){
+      System.out.println("Special Of The Day");
+      System.out.println("Pizza of the day:" + pizzaOfTheDay);
+      System.out.println("Side of the day:" + sideOfTheDay);
+      System.out.println("Special price:" + specialPrice);
+    }
+
 
     }
 
